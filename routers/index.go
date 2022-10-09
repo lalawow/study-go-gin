@@ -1,8 +1,9 @@
 package routers
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 //RegisterRoutes add all routing list here automatically get main router
@@ -12,6 +13,7 @@ func RegisterRoutes(route *gin.Engine) {
 	})
 	route.GET("/health", func(ctx *gin.Context) { ctx.JSON(http.StatusOK, gin.H{"live": "ok"}) })
 
+	UsersRoutes(route)
 	//Add All route
 	//TestRoutes(route)
 }
